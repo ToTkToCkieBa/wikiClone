@@ -1,8 +1,5 @@
 import React from 'react';
 import Styles from './styles.module.scss'
-const wikiclone = "Andrey"
-console.log(wikiclone);
-
 
 export const TestComponent = () => {
     return (

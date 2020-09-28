@@ -1,0 +1,116 @@
+@import "resources.scss";
+
+.container{
+  display: grid;
+  grid-template-rows: repeat(2, max-content) 1fr;
+  grid-template-columns: min-content min-content;
+
+
+  overflow-x: hidden;
+  position: relative;
+
+  padding-top: 2.5rem;
+
+  background: $white;
+  height: 100vh;
+
+
+  @include media(xl) {
+    grid-template-rows: repeat(4, max-content) 1fr;
+    grid-template-columns: 1fr min-content 1fr;
+  }
+
+  & .whiteCircle{
+    position: absolute;
+    top: -1rem;
+    right: 2rem;
+
+
+    width: 3.5rem;
+    height: 3.5rem;
+
+    box-shadow: inset -13px -8px 11px -8px  #eeeeee, 65px 70px 30px -10px  #9d9d9d;
+
+
+    border-radius: 50px;
+    background: $whiteSmoke;
+
+    z-index: 7;
+
+    @include media(xl) {
+      grid-row: 1;
+      grid-column: 1 / 4;
+
+      justify-self: center;
+
+      position: static;
+
+      width: 4.5rem;
+      height: 4.5rem;
+
+      box-shadow: inset -13px -8px 11px -8px #eeeeee, 110px 100px 35px 0px #9d9d9d;
+    }
+  }
+
+  & .largeCircle{
+    position: absolute;
+    top: -15rem;
+    left: -5rem;
+
+    width: 40rem;
+    height: 40rem;
+
+    box-shadow: inset 0px -30px 40px 40px #9d9d9d;
+
+    opacity: 0.1;
+
+    border-radius: 30rem;
+    background: #e3e3e3;
+
+    z-index: 5;
+
+    @include media(sm) {
+      left: 10rem;
+    }
+
+    @include media(md) {
+      left: 23rem;
+    }
+
+    @include media(lg) {
+      left: 33rem;
+    }
+
+    @include media(xl) {
+      left: 26rem;
+      top: -10rem;
+    }
+
+  }
+
+  & .buttonLogoWrap{
+    display: grid;
+    grid-template-columns: max-content max-content;
+
+    width: 100%;
+    justify-content: space-between;
+
+    padding: 0 1.5rem;
+
+
+
+    & .logo{
+      cursor: pointer;
+
+      color: $black;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    & .signIn{
+      display: none;
+    }
+  }
+
+
+}

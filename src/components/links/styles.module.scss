@@ -1,0 +1,18 @@
+@import "resources.scss";
+
+.container{
+  display: none;
+
+  @include media(xl) {
+    //display: grid;
+    grid-template-columns: repeat(3, max-content);
+    grid-row: 5;
+    grid-column: 1 ;
+  }
+  & .languageSwitcher{
+    @include media(xl) {
+      display: grid;
+      grid-template-columns: repeat(3, max-content);
+    }
+  }
+}

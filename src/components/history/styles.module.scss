@@ -1,0 +1,82 @@
+@import "resources.scss";
+
+.container{
+  display: grid;
+  justify-self: end;
+  align-self: end;
+
+  grid-row: 3;
+  grid-column: 1 / 3;
+
+  width: 92%;
+  height: 10rem;
+  padding: 1rem 1.5rem;
+  margin-top: 8rem;
+
+  background: $black;
+
+  @include media(xl) {
+    grid-row: 5;
+    grid-column: 3;
+
+    grid-template-columns: max-content max-content;
+
+    grid-gap: 1.5rem;
+    gap: 1.5rem;
+
+    height: auto;
+    padding: 2rem 0.75rem;
+    margin-top: 0;
+  }
+
+  & .title{
+    font-size: 0.75rem;
+    color: $veryLightGrey;
+  }
+
+  & .lastSearch{
+    display: grid;
+    grid-template-rows: max-content;
+
+    padding-left: 2rem;
+
+    @include media(xl) {
+      grid-template-columns: repeat(4, max-content);
+
+      grid-gap: 1.5rem;
+      gap: 1.5rem;
+
+      padding-left: 0;
+    }
+
+    & .item{
+      cursor: pointer;
+      font-size: 0.75rem;
+      color: $white;
+      text-decoration: none;
+
+      @include media(xl) {
+        font-size: 0.65rem;
+      }
+    }
+
+    & .desktopItem{
+      display: none;
+
+      @include media(xl) {
+        display: block;
+      }
+    }
+  }
+
+  & .otherHistory{
+    cursor: pointer;
+    font-size: 0.75rem;
+    color: $white;
+    text-decoration: none;
+
+    @include media(xl) {
+      font-size: 0.65rem;
+    }
+  }
+}
