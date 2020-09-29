@@ -19,6 +19,10 @@
     color: $black;
     font-weight: bold;
 
+    &:hover{
+      color: $darkBlue;
+    }
+
     @include media(fullHD) {
       font-size: 1.5rem;
     }
