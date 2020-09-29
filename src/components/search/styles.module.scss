@@ -18,6 +18,10 @@
     padding: 4rem 10rem 0 10rem;
   }
 
+  @include media(fullHD) {
+    padding: 5rem 20rem 0 20rem;
+  }
+
   & .searchNav{
     display: grid;
     grid-template-columns: max-content max-content;
@@ -30,6 +34,10 @@
       cursor: pointer;
       font-size: 15px;
       font-weight: bold;
+
+      @include media(fullHD) {
+        font-size: 1.5rem;
+      }
 
       & .searchArrow{
         display: inline-grid;
@@ -50,6 +58,11 @@
         gap: 1.5rem;
       }
 
+      @include media(fullHD) {
+        grid-gap: 2.5rem;
+        gap: 2.5rem;
+      }
+
       & .icon{
         cursor: pointer;
         width: 1.25rem;
@@ -59,6 +72,11 @@
         @include media(xl) {
           width: 1.75rem;
           height: 1.75rem;
+        }
+
+        @include media(fullHD) {
+          width: 2.5rem;
+          height: 2.5rem;
         }
       }
     }
@@ -74,9 +92,27 @@
 
     background: transparent;
 
+    @include media(xl) {
+      height: 6rem;
+      font-size: 4rem;
+    }
+
+    @include media(fullHD) {
+      height: 9rem;
+      font-size: 6rem;
+    }
+
     &::placeholder{
       font-size: 2.5rem;
       color: $veryLightGrey;
+
+      @include media(xl) {
+        font-size: 4rem;
+      }
+
+      @include media(fullHD) {
+        font-size: 6rem;
+      }
     }
   }
 
@@ -85,5 +121,13 @@
 
     font-size: 0.65rem;
     color: $veryLightGrey;
+
+    @include media(xl) {
+      font-size: 0.85rem;
+    }
+
+    @include media(fullHD) {
+      font-size: 1.25rem;
+    }
   }
 }

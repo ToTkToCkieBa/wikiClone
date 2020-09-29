@@ -8,15 +8,17 @@ export const Links = () => {
     return (
         <section className={`${Styles.container}`}>
             <div className={`${Styles.languageSwitcher}`}>
-                <a href="/">main version on english</a>
-                <div>or</div>
-                <a href="/">
+                <a className={`${Styles.item}`} href="/">main version on english</a>
+                <div className={`${Styles.separator}`}>or</div>
+                <a className={`${Styles.item}`} href="/">
                     choose your language
                     <span className={`${Styles.searchArrow}`}>{entities.decode('&#8249')}</span>
                 </a>
             </div>
-            <a href="/">mobile view</a>
-            <a href="/">classic wikipedia</a>
+            <div className={`${Styles.otherLinks}`}>
+                <a  className={`${Styles.item}`} href="/">mobile view</a>
+                <a className={`${Styles.item}`} href="/"><span>classic wikipedia</span></a>
+            </div>
         </section>
     );
 };
