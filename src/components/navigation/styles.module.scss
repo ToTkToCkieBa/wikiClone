@@ -20,6 +20,12 @@
 
     margin-top: 3px;
 
+    &:hover{
+      & .line{
+        background-color: $darkBlue;
+      }
+    }
+
     @include media(fullHD) {
       margin-top: 6px;
     }

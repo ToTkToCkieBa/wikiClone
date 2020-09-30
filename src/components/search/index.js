@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from 'react-redux';
+import {search, clearSearchResults} from "../../store/search/action";
 import Styles from './styles.module.scss'
 import { Html5Entities } from 'html-entities';
 
@@ -6,12 +8,41 @@ import { Html5Entities } from 'html-entities';
 import microphone from '/wiki/wiki/src/theme/assets/svg/microphone.svg';
 // eslint-disable-next-line import/no-absolute-path
 import keyboard from '/wiki/wiki/src/theme/assets/svg/keyboard.svg';
+import SearchResult from "../searchResult";
 
 
 
-export const Search = () => {
+export const Search = (props) => {
+    const {
+        onSearch,
+        onClearSearchResults,
+        results
+    } = props;
+
     const microIcon = microphone;
     const keyboardIcon = keyboard
+
+    const searchHandler = (value) => {
+        if (value.length > 2){
+            let url = "https://en.wikipedia.org/w/api.php";
+
+            const params = {
+                action: "opensearch",
+                search: value,
+                limit: "5",
+                namespace: "0",
+                format: "json"
+            };
+
+            url = `${url  }?origin=*`;
+            Object.keys(params).forEach(function(key){url += `&${  key  }=${  params[key]}`;});
+
+            onSearch(url);
+        } else if (results[1]){
+            console.log('clear!');
+            onClearSearchResults();
+        }
+    }
 
     const entities = new Html5Entities();
     return (
@@ -30,12 +61,30 @@ export const Search = () => {
                 className={`${Styles.input}`}
                 type="text"
                 placeholder="Search"
+                onChange={(e) => {
+                    searchHandler(e.target.value)
+                }}
             />
             <div className={`${Styles.note}`}>
                 Type what you are looking for...
             </div>
+            <SearchResult/>
         </section>
     );
 };
 
-export default Search;
+const mapStateToProps = store => {
+    return {
+        results: store.search.searchResults
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        onSearch: url => dispatch(search(url)),
+        onClearSearchResults: () => dispatch(clearSearchResults())
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search)
+
