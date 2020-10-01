@@ -9,6 +9,10 @@
   z-index: 10;
 
   @include media(xl) {
+    padding-left: 2rem;
+  }
+
+  @include media(fullHD) {
     padding-left: 3rem;
   }
 

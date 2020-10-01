@@ -11,38 +11,35 @@
 
   align-self: end;
 
-  grid-gap: 1.5rem;
-  gap: 1.5rem;
+  grid-gap: 1rem;
+  gap: 1rem;
 
-  padding: 2rem 3rem;
+  padding: 1rem 2rem;
 
   @include media(xl) {
     display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-template-rows: max-content;
   }
 
   @include media(fullHD) {
-    grid-template-columns: repeat(2, max-content);
-    grid-template-rows: max-content;
+    padding: 1.5rem 3rem;
   }
 
   & .languageSwitcher{
     display: grid;
     grid-template-columns: repeat(3, max-content);
 
-    grid-gap: 1rem;
-    gap: 1rem;
+    grid-gap: 0.5rem;
+    gap: 0.5rem;
 
     grid-row: 1;
-    grid-column: 1 / 3;
-
-    @include media(fullHD) {
-      grid-column: 1;
-    }
+    grid-column: 1;
 
     & .item{
       text-decoration: none;
 
-      font-size: 1rem;
+      font-size: 0.75rem;
       font-weight: bold;
 
       color: $black;
@@ -57,7 +54,12 @@
     }
 
     & .separator{
+      font-size: 0.75rem;
       color: $darkGrey;
+
+      @include media(fullHD) {
+        font-size: 1rem;
+      }
     }
 
     & .searchArrow{
@@ -74,18 +76,13 @@
     grid-gap: 1rem;
     gap: 1rem;
 
-    grid-row: 2;
-    grid-column: 1 / 3;
-
-    @include media(fullHD) {
-      grid-row: 1;
-      grid-column: 2;
-    }
+    grid-row: 1;
+    grid-column: 2;
 
     & .item{
       text-decoration: none;
 
-      font-size: 1rem;
+      font-size: 0.75rem;
       font-weight: bold;
 
       color: $black;

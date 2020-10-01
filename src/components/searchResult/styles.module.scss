@@ -8,10 +8,13 @@
   top: 10rem;
   left: 1.5rem;
 
+  border: 2px solid $darkGrey;
+  border-top: none;
+
   background-color: $whiteGrey;
 
   @include media(xl) {
-    top: 12.5rem;
+    top: 11.5rem;
     left: 10rem;
   }
 
