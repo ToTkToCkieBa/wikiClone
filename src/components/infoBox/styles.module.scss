@@ -1,0 +1,40 @@
+@import "resources.scss";
+
+.container {
+  display: grid;
+  grid-gap: 1rem;
+  gap: 1rem;
+
+  grid-column: 1 / 3;
+
+  padding: 2rem 0.5rem;
+
+  background: $whiteSmoke;
+
+  & .test{
+    display: grid;
+    justify-self: center;
+
+    max-width: 17rem;
+  }
+
+  & .itemWrap{
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+
+    grid-gap: 1rem;
+    gap: 1rem;
+
+    & .itemTitle{
+      font-size: 0.75rem;
+      font-weight: bold;
+      line-height: 1.5rem;
+      color: &black;
+    }
+
+    & .itemContent{
+      font-size: 0.75rem;
+      line-height: 1.5rem;
+    }
+  }
+}

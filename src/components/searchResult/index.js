@@ -2,17 +2,24 @@ import React from "react";
 import Styles from './styles.module.scss'
 import {connect} from "react-redux";
 import { getContent } from "../../store/content/action";
+import { useHistory } from "react-router-dom";
+import {clearSearchResults} from "../../store/search/action";
 
 
 export const SearchResult = (props) => {
     const {
         results,
-        onGetContentResults
+        onGetContentResults,
+        onClearSearchResults
     } = props;
+
+    const history = useHistory();
 
     const choiceHandler = (target) => {
         console.log(results[3][results[1].findIndex(i => i === target)]);
         onGetContentResults(target);
+        history.push('/details');
+        onClearSearchResults();
     }
 
     return (
@@ -41,7 +48,8 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onGetContentResults: url => dispatch(getContent(url))
+        onGetContentResults: url => dispatch(getContent(url)),
+        onClearSearchResults: () => dispatch(clearSearchResults())
     }
 }
 

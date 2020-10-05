@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import {search, clearSearchResults} from "../../store/search/action";
 import Styles from './styles.module.scss'
 import { Html5Entities } from 'html-entities';
@@ -16,13 +17,15 @@ export const Search = (props) => {
     const {
         onSearch,
         onClearSearchResults,
-        results
+        results,
+        type
     } = props;
 
     const microIcon = microphone;
     const keyboardIcon = keyboard
 
     const searchHandler = (value) => {
+        console.log(results)
         if (value.length > 2){
             let url = "https://en.wikipedia.org/w/api.php";
 
@@ -38,15 +41,17 @@ export const Search = (props) => {
             Object.keys(params).forEach(function(key){url += `&${  key  }=${  params[key]}`;});
 
             onSearch(url);
-        } else if (results[1]){
-            console.log('clear!');
-            onClearSearchResults();
+        } else if (results){
+            if (results[1]){
+                console.log('clear!');
+                onClearSearchResults();
+            }
         }
     }
 
     const entities = new Html5Entities();
     return (
-        <section className={`${Styles.container}`}>
+        <section className={`${Styles.container} ${type === 'mainPage' ? Styles.mainPage : Styles.contentPage}`}>
           <div className={`${Styles.searchNav}`}>
               <div className={`${Styles.searchLangWrap}`}>
                   english
@@ -68,7 +73,7 @@ export const Search = (props) => {
             <div className={`${Styles.note}`}>
                 Type what you are looking for...
             </div>
-            <SearchResult/>
+            <SearchResult type/>
         </section>
     );
 };
@@ -85,6 +90,10 @@ const mapDispatchToProps = dispatch => {
         onClearSearchResults: () => dispatch(clearSearchResults())
     }
 }
+
+Search.propTypes = {
+    type: PropTypes.oneOf(['mainPage', 'contentPage']).isRequired
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search)
 

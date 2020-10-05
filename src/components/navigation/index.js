@@ -1,9 +1,11 @@
 import React from "react";
 import Styles from './styles.module.scss'
+import PropTypes from "prop-types";
 
-export const Navigation = () => {
+export const Navigation = (props) => {
+    const {type} = props;
     return (
-        <section className={`${Styles.container}`}>
+        <section className={`${Styles.container}  ${type === 'mainPage' ? Styles.mainPage : Styles.contentPage}`}>
             <button className={`${Styles.buttonWrap}`}>
                 <div className={`${Styles.line}`}/>
                 <div className={`${Styles.line}`}/>
@@ -13,3 +15,7 @@ export const Navigation = () => {
 };
 
 export default Navigation;
+
+Navigation.propTypes = {
+    type: PropTypes.oneOf(['mainPage', 'contentPage']).isRequired
+};

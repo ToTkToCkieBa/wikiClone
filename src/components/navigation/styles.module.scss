@@ -1,12 +1,26 @@
 @import "resources.scss";
 
 .container{
-  grid-row: 1;
-  grid-column: 1;
-
-  padding-left: 1.5rem;
 
   z-index: 10;
+
+  &.mainPage{
+    grid-row: 1;
+    grid-column: 1;
+
+    padding-left: 1.5rem;
+  }
+
+  &.contentPage{
+    display: grid;
+    align-items: center;
+
+    grid-row: 1;
+    grid-column: 1;
+
+    padding-left: 0.5rem;
+
+  }
 
   @include media(xl) {
     padding-left: 2rem;
@@ -49,4 +63,5 @@
       }
     }
   }
+
 }

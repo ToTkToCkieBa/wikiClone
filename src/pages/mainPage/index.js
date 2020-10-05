@@ -7,18 +7,19 @@ import Navigation from "../../components/navigation";
 import Logo from "../../components/logo";
 import Authorization from "../../components/authorization";
 import Links from "../../components/links";
+import SmallCircle from "../../components/_UI/smallCircle";
 
 export const MainPage = () => {
     return (
         <section className={`${Styles.container}`}>
             <Fade top>
-                <div className={`${Styles.whiteCircle}`}/>
+                <SmallCircle type="mainPage"/>
             </Fade>
             <div className={`${Styles.largeCircle}`}/>
-            <Navigation/>
-            <Logo/>
+            <Navigation type="mainPage"/>
+            <Logo type="mainPage"/>
             <Authorization/>
-            <Search/>
+            <Search type="mainPage"/>
             <Links/>
             <History/>
         </section>

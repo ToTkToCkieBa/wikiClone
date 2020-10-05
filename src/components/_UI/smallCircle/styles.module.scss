@@ -1,0 +1,61 @@
+@import "resources.scss";
+
+.container {
+  position: absolute;
+  top: -1rem;
+
+
+
+  width: 3.5rem;
+  height: 3.5rem;
+
+
+
+
+  border-radius: 50px;
+  background: $whiteSmoke;
+
+  z-index: 7;
+
+  @include media(xl) {
+    grid-row: 1;
+    grid-column: 1 / 4;
+
+    justify-self: center;
+
+    position: static;
+
+    width: 6rem;
+    height: 6rem;
+
+    box-shadow: inset -13px -8px 11px -8px #eeeeee, 170px 130px 35px 0px #9d9d9d;
+  }
+
+  @include media(fullHD) {
+    width: 8rem;
+    height: 8rem;
+
+    box-shadow: inset -13px -8px 11px -8px #eeeeee, 250px 150px 35px 0px #9d9d9d;
+
+    border-radius: 100px;
+  }
+
+  &.mainPage {
+    right: 2rem;
+    box-shadow: inset -13px -8px 11px -8px  #eeeeee, 65px 70px 30px -10px  #9d9d9d;
+
+    @include media(xl) {
+      box-shadow: inset -13px -8px 11px -8px #eeeeee, 170px 130px 35px 0px #9d9d9d;
+    }
+
+    @include media(fullHD) {
+      box-shadow: inset -13px -8px 11px -8px #eeeeee, 250px 150px 35px 0px #9d9d9d;
+      border-radius: 100px;
+    }
+  }
+
+  &.contentPage {
+    right: 1rem;
+    box-shadow: inset -13px -8px 11px -8px  #eeeeee;
+  }
+}

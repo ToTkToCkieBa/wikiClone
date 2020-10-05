@@ -1,1 +1,1 @@
-export * from 'deviceDecorateButton';
+export * from 'smallCircle';

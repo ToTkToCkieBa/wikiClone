@@ -1,14 +1,33 @@
 @import "resources.scss";
 
 .container{
-  justify-self: end;
-
-  grid-row: 1;
-  grid-column: 2;
-
-  padding-right: 1.5rem;
-
   z-index: 10;
+
+  &.mainPage{
+    grid-row: 1;
+    grid-column: 2;
+
+    justify-self: end;
+    padding-right: 1.5rem;
+
+    @include media(xl) {
+      grid-row: 3;
+      grid-column: 1 / 4;
+
+      justify-self: center;
+
+      padding-right: 0;
+    }
+  }
+
+  &.contentPage{
+    grid-row: 1;
+    grid-column: 2;
+
+    justify-self: end;
+
+    padding-right: 0.5rem;
+  }
 
   @include media(xl) {
     grid-row: 3;
