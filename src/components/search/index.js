@@ -73,7 +73,7 @@ export const Search = (props) => {
             <div className={`${Styles.note}`}>
                 Type what you are looking for...
             </div>
-            <SearchResult type/>
+            <SearchResult type={type}/>
         </section>
     );
 };

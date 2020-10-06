@@ -5,8 +5,7 @@
   grid-gap: 0.5rem;
 
   position: absolute;
-  top: 10rem;
-  left: 1.5rem;
+
 
   border: 2px solid $darkGrey;
   border-top: none;
@@ -16,6 +15,29 @@
   @include media(xl) {
     top: 11.5rem;
     left: 10rem;
+  }
+
+  &.mainPage{
+    top: 10rem;
+    left: 1.5rem;
+
+    @include media(xl) {
+      top: 11.5rem;
+      left: 10rem;
+    }
+  }
+
+  &.contentPage{
+    top: 2rem;
+    left: 0.5rem;
+
+    @include media(sm) {
+      left: 1rem;
+    }
+
+    @include media(sm) {
+      left: 5rem;
+    }
   }
 
   & .item{

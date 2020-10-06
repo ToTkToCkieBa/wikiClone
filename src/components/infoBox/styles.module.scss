@@ -11,6 +11,14 @@
 
   background: $whiteSmoke;
 
+  @include media(sm) {
+    padding: 2rem 1rem;
+  }
+
+  @include media(lg) {
+    padding: 2rem 5rem;
+  }
+
   & .test{
     display: grid;
     justify-self: center;
@@ -24,6 +32,10 @@
 
     grid-gap: 1rem;
     gap: 1rem;
+
+    @include media(sm) {
+      grid-template-columns: 7rem 1fr;
+    }
 
     & .itemTitle{
       font-size: 0.75rem;

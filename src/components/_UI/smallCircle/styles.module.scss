@@ -57,5 +57,13 @@
   &.contentPage {
     right: 1rem;
     box-shadow: inset -13px -8px 11px -8px  #eeeeee;
+
+    @include media(sm) {
+      right: 1.5rem;
+    }
+
+    @include media(lg) {
+      right: 5.5rem;
+    }
   }
 }

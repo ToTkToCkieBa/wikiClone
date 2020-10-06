@@ -1,0 +1,30 @@
+@import "resources.scss";
+
+.container{
+  display: grid;
+  grid-column: 1 / 3;
+
+  padding: 0 0.5rem;
+
+  @include media(sm) {
+    padding: 0 1rem;
+  }
+
+  @include media(sm) {
+    padding: 0 5rem;;
+  }
+
+  & .itemTitle{
+
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  & .itemText{
+    text-align: justify;
+    font-size: 0.75rem;
+    line-height: 1.5rem;
+
+    padding-bottom: 0.5rem;
+  }
+}

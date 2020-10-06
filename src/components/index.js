@@ -7,3 +7,5 @@ export * from 'navigation';
 export * from 'links';
 export * from 'infoBox';
 export * from 'generalContent';
+export * from 'categoriesContent';
+export * from 'images';

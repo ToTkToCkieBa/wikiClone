@@ -6,6 +6,7 @@ import Logo from "../../components/logo";
 import SmallCircle from "../../components/_UI/smallCircle";
 import InfoBox from "../../components/infoBox";
 import GeneralContent from "../../components/generalContent";
+import CategoriesContent from "../../components/categoriesContent";
 
 export const ContentPage = () => {
     return (
@@ -16,6 +17,7 @@ export const ContentPage = () => {
             <Logo type="contentPage"/>
             <InfoBox/>
             <GeneralContent/>
+            <CategoriesContent/>
         </section>
     );
 };

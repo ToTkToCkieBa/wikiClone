@@ -1,0 +1,33 @@
+@import "resources.scss";
+
+.container{
+  display: grid;
+  justify-items: center;
+
+  grid-gap: 1rem;
+  gap: 1rem;
+
+  padding: 1rem 0;
+
+  & .imgWrap{
+    border: 1px solid #818188;
+    display: grid;
+    justify-items: center;
+
+    @include media(sm) {
+      width: 100%;
+      max-width: 30rem;
+    }
+
+    & .img{
+      width: 100%;
+    }
+
+    & .imgCaption{
+      font-size: 0.5rem;
+      line-height: 1rem;
+
+      padding: 0.25rem;
+    }
+  }
+}

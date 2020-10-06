@@ -27,6 +27,14 @@
     justify-self: end;
 
     padding-right: 0.5rem;
+
+    @include media(sm) {
+      padding-right: 1rem;
+    }
+
+    @include media(lg) {
+      padding-right: 5rem;
+    }
   }
 
   @include media(xl) {

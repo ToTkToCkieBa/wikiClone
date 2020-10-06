@@ -20,6 +20,14 @@
 
     padding-left: 0.5rem;
 
+    @include media(sm) {
+      padding-left: 1rem;
+    }
+
+    @include media(lg) {
+      padding-left: 5rem;
+    }
+
   }
 
   @include media(xl) {

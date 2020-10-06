@@ -10,7 +10,8 @@ export const SearchResult = (props) => {
     const {
         results,
         onGetContentResults,
-        onClearSearchResults
+        onClearSearchResults,
+        type
     } = props;
 
     const history = useHistory();
@@ -24,7 +25,7 @@ export const SearchResult = (props) => {
 
     return (
         results[1] ?
-            <section className={`${Styles.container}`}>
+            <section className={`${Styles.container} ${type === 'mainPage' ? Styles.mainPage : Styles.contentPage}`}>
                 {results[1].map((item, index)=>{
                     return (
                         <div
