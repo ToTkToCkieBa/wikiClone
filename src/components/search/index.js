@@ -20,6 +20,8 @@ export const Search = (props) => {
     const keyboardIcon = keyboard
 
     const searchHandler = (value) => {
+        // create search endpoint
+
         if (value.length > 2){
             let url = "https://en.wikipedia.org/w/api.php";
 

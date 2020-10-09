@@ -18,6 +18,8 @@ const Images = (props) => {
                     images.map((item, index) =>{
                         if (item.thumb && item.caption){
                             const id = uniqueId();
+                            // add new img to image collection in store
+
                             onAddNewImg({
                                 id,
                                 url: item.thumb,
@@ -25,6 +27,8 @@ const Images = (props) => {
                             })
                             return (
                                 <div className={`${Styles.imgWrap}`} key={index} id={id} onClick={e => {
+                                    // check which picture was clicked
+
                                     onOpenGallery({
                                         id: e.target.id,
                                         posY: window.pageYOffset

@@ -28,6 +28,7 @@ export const CategoriesContent = (props) => {
                                                         let pContent = '';
                                                         // eslint-disable-next-line array-callback-return
                                                         paragraph1.sentences.map(i => {
+                                                            // pContent - new paragraph compiled from sentences
 
                                                             pContent += `${i.text} `
                                                         })
@@ -46,6 +47,8 @@ export const CategoriesContent = (props) => {
                     }
                     if (item.depth === 1) {
                         if (item.paragraphs) {
+                            // categories rendering with paragraphs([{[]}])
+
                             return (
                                 <div className={`${Styles.itemWrap}`} key={index}>
                                     <div className={`${Styles.itemTitle}`}>{item.title}</div>
@@ -54,6 +57,8 @@ export const CategoriesContent = (props) => {
                                     {item.paragraphs.map((paragraph2, index) => {
                                         if (paragraph2.sentences) {
                                             if (paragraph2.sentences.length > 0) {
+                                                // pContent - new paragraph compiled from sentences
+
                                                 let pContent = '';
                                                 // eslint-disable-next-line array-callback-return
                                                 paragraph2.sentences.map(i => {

@@ -20,6 +20,8 @@ const Gallery = (props) => {
             }}>
 
                 <div className={`${Styles.close}`} onClick={() => onCloseGallery()}>
+                    {/*decorate items*/}
+
                     <div className={`${Styles.item} ${Styles.item1}`}/>
                     <div className={`${Styles.item} ${Styles.item2}`}/>
                 </div>
@@ -29,6 +31,8 @@ const Gallery = (props) => {
                         onPrevImage(+currentImg.id === 1 ? `${galleryLength}` : `${currentImg.id - 1}`)
                     }}
                 >
+                    {/*decorate items*/}
+
                     <div className={`${Styles.item} ${Styles.item1}`}/>
                     <div className={`${Styles.item} ${Styles.item2}`}/>
                 </div>
@@ -46,6 +50,8 @@ const Gallery = (props) => {
                         onNextImage(+currentImg.id === galleryLength ? '1' : `${+currentImg.id + 1}`)
                     }}
                 >
+                    {/*decorate items*/}
+
                     <div className={`${Styles.item} ${Styles.item1}`}/>
                     <div className={`${Styles.item} ${Styles.item2}`}/>
                 </div>

@@ -2,6 +2,8 @@ import React from "react";
 import Styles from './styles.module.scss'
 import PropTypes from "prop-types";
 
+// absolute circle for main/content page
+
 export const SmallCircle = (props) => {
     const {type} = props;
 

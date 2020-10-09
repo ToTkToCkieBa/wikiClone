@@ -14,6 +14,8 @@ export const GeneralContent = (props) => {
             }
             {
                 results.sections ? results.sections[0].paragraphs.map((item, index) =>{
+                    // pContent - new paragraph compiled from sentences
+
                     let pContent = '';
                     // eslint-disable-next-line array-callback-return
                     item.sentences.map(i =>{

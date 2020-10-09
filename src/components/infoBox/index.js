@@ -12,6 +12,8 @@ export const InfoBox = (props) => {
                 return (
                     <div className={`${Styles.itemWrap}`} key={index}>
                         <div className={`${Styles.itemTitle}`}>
+                            {/* replacement (_) to (' ') */}
+                            
                             {[item.replace(/_/g, ' ').charAt(0).toUpperCase()
                             + item.replace(/_/g, ' ').slice(1)]}
                         </div>
