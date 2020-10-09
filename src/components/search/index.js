@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import {search, clearSearchResults} from "../../store/search/action";
 import Styles from './styles.module.scss'
 import { Html5Entities } from 'html-entities';
-import microphone from '/wiki/wiki/src/theme/assets/svg/microphone.svg';
-import keyboard from '/wiki/wiki/src/theme/assets/svg/keyboard.svg';
+import microphone from "../../theme/assets/svg/microphone.svg";
+import keyboard from '../../theme/assets/svg/keyboard.svg';
 import SearchResult from "../searchResult";
 
 export const Search = (props) => {
