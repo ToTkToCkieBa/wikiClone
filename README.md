@@ -1,5 +1,15 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Add env for starting:
+Create .env.development.local and .env.production.local files in the root project folder
+Add SASS_PATH environment variable:
+## Linux/Unix: 
+SASS_PATH = node_modules:src/src/theme/scss
+##Windows: 
+SASS_PATH = ./node_modules;./src/theme/scss
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
