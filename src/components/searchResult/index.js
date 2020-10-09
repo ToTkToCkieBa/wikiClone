@@ -5,7 +5,6 @@ import { getContent } from "../../store/content/action";
 import { useHistory } from "react-router-dom";
 import {clearSearchResults} from "../../store/search/action";
 
-
 export const SearchResult = (props) => {
     const {
         results,
@@ -17,7 +16,6 @@ export const SearchResult = (props) => {
     const history = useHistory();
 
     const choiceHandler = (target) => {
-        console.log(results[3][results[1].findIndex(i => i === target)]);
         onGetContentResults(target);
         history.push('/details');
         onClearSearchResults();

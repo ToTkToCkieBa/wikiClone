@@ -7,19 +7,38 @@ import SmallCircle from "../../components/_UI/smallCircle";
 import InfoBox from "../../components/infoBox";
 import GeneralContent from "../../components/generalContent";
 import CategoriesContent from "../../components/categoriesContent";
+import Authorization from "../../components/authorization";
+import Links from "../../components/links";
+import History from "../../components/history";
+import Gallery from "../../components/gallery";
+import {connect} from "react-redux";
 
-export const ContentPage = () => {
+const ContentPage = (props) => {
+    const {isOpen} = props;
     return (
-        <section className={`${Styles.container}`}>
+        <section
+            className={`${Styles.container}`}
+            style={{overflow: `${isOpen ? 'hidden' : 'scroll'}`}}
+        >
             <SmallCircle type="contentPage"/>
             <Search type="contentPage"/>
             <Navigation type="contentPage"/>
             <Logo type="contentPage"/>
+            <Authorization type="contentPage"/>
             <InfoBox/>
             <GeneralContent/>
             <CategoriesContent/>
+            <Links/>
+            <History type="contentPage"/>
+            <Gallery/>
         </section>
     );
 };
 
-export default ContentPage;
+const mapStateToProps = store => {
+    return {
+        isOpen: store.images.isOpen
+    }
+}
+
+export default connect(mapStateToProps, null)(ContentPage)

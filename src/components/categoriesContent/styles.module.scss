@@ -10,21 +10,114 @@
     padding: 0 1rem;
   }
 
-  @include media(sm) {
+  @include media(lg) {
     padding: 0 5rem;;
   }
 
-  & .itemTitle{
+  @include media(xl) {
+    grid-row: 4;
+    grid-column: 1 / 4;
 
-    font-size: 1rem;
-    font-weight: bold;
+    padding-left: 1rem;
+    padding-right: 3rem;
   }
 
-  & .itemText{
-    text-align: justify;
-    font-size: 0.75rem;
-    line-height: 1.5rem;
+  & .itemWrap{
+    display: grid;
 
-    padding-bottom: 0.5rem;
+    @include media(xl) {
+      grid-template-columns: 30rem 1fr;
+    }
+
+    @include media(fullHD) {
+      grid-template-columns: 40rem 1fr;
+    }
+
+    & .itemTitle{
+      font-size: 1rem;
+      font-weight: bold;
+
+      padding-top: 1rem;
+
+      @include media(xl) {
+        grid-column: 2;
+
+        margin-left: 0.5rem;
+      }
+
+      @include media(fullHD) {
+        font-size: 1.5rem;
+        padding-bottom: 1rem;
+      }
+    }
+
+    & .itemText{
+      text-align: justify;
+      font-size: 0.75rem;
+      line-height: 1.5rem;
+
+      padding-bottom: 0.5rem;
+
+      @include media(xl) {
+        grid-column: 2;
+        margin-left: 0.5rem;
+      }
+
+      @include media(fullHD) {
+        font-size: 1rem;
+        line-height: 1.75rem;
+      }
+    }
+  }
+
+  & .categoriesWrap{
+    display: grid;
+
+    @include media(xl) {
+      grid-template-columns: 30rem 1fr;
+    }
+
+    @include media(fullHD) {
+      grid-template-columns: 40rem 1fr;
+    }
+
+    & .categoriesTitle{
+      font-size: 1.5rem;
+      font-weight: bold;
+
+      padding-top: 2rem;
+      padding-bottom: 0.5rem;
+
+      margin-bottom: 1rem;
+
+      border-bottom: 1px solid $darkGrey;
+
+      @include media(xl) {
+        grid-column: 2;
+
+        padding-top: 1rem;
+        margin-left: 0.5rem;
+      }
+
+      @include media(fullHD) {
+        font-size: 2rem;
+      }
+    }
+
+    & .categoriesText{
+      text-align: justify;
+      font-size: 0.75rem;
+      line-height: 1.5rem;
+
+      @include media(xl) {
+        grid-column: 2;
+        margin-left: 0.5rem;
+      }
+
+      @include media(fullHD) {
+        font-size: 1rem;
+        line-height: 1.75rem;
+      }
+    }
   }
 }

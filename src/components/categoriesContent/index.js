@@ -1,23 +1,53 @@
 import React from "react";
 import Styles from './styles.module.scss'
 import {connect} from "react-redux";
-import {Images} from "../images";
+import Images from "../images";
 
 export const CategoriesContent = (props) => {
     const {results} = props;
-    console.log(results);
     return (
         <section className={`${Styles.container}`}>
             {
                 // eslint-disable-next-line array-callback-return
-                results ? results.map(item => {
+                results ? results.map((item, index) => {
                     if (item.title === '') {
                         return null
                     }
-                    if (item.depth === 1) {
-                        if (item.paragraphs){
+                    if (item.depth === 0) {
+                        if (item.title !== "") {
                             return (
-                                <div>
+                                <div className={`${Styles.categoriesWrap}`} key={index}>
+                                    <div className={`${Styles.categoriesTitle}`}>{item.title}</div>
+                                    <Images images={item.images}/>
+                                    {
+                                        // eslint-disable-next-line array-callback-return
+                                        item.paragraphs ? item.paragraphs.map((paragraph1, index) => {
+                                                if (paragraph1.sentences) {
+
+                                                    if (paragraph1.sentences.length > 0) {
+                                                        let pContent = '';
+                                                        // eslint-disable-next-line array-callback-return
+                                                        paragraph1.sentences.map(i => {
+
+                                                            pContent += `${i.text} `
+                                                        })
+                                                        return (
+                                                            <div className={`${Styles.categoriesText}`} key={index}>
+                                                                {pContent}
+                                                            </div>
+                                                        )
+                                                    }
+                                                }
+                                            }
+                                        ) : null}
+                                </div>
+                            )
+                        }
+                    }
+                    if (item.depth === 1) {
+                        if (item.paragraphs) {
+                            return (
+                                <div className={`${Styles.itemWrap}`} key={index}>
                                     <div className={`${Styles.itemTitle}`}>{item.title}</div>
                                     <Images images={item.images}/>
                                     {/* eslint-disable-next-line array-callback-return */}
@@ -26,14 +56,12 @@ export const CategoriesContent = (props) => {
                                             if (paragraph2.sentences.length > 0) {
                                                 let pContent = '';
                                                 // eslint-disable-next-line array-callback-return
-                                                paragraph2.sentences.map(i =>{
-                                                    pContent += `${i.text  } `
+                                                paragraph2.sentences.map(i => {
+                                                    pContent += `${i.text} `
                                                 })
                                                 return (
-                                                    <div key={index}>
-                                                        <div className={`${Styles.itemText}`}>
-                                                            {pContent}
-                                                        </div>
+                                                    <div className={`${Styles.itemText}`} key={index}>
+                                                        {pContent}
                                                     </div>
                                                 )
                                             }
@@ -54,6 +82,8 @@ const mapStateToProps = store => {
         results: store.content.getContentResults.sections
     }
 }
+
+
 
 
 export default connect(mapStateToProps, null)(CategoriesContent);

@@ -4,13 +4,8 @@
   position: absolute;
   top: -1rem;
 
-
-
   width: 3.5rem;
   height: 3.5rem;
-
-
-
 
   border-radius: 50px;
   background: $whiteSmoke;
@@ -64,6 +59,20 @@
 
     @include media(lg) {
       right: 5.5rem;
+    }
+
+    @include media(xl) {
+      justify-self: start;
+
+      grid-row: 1;
+      grid-column: 2;
+
+      margin-top: 3rem;
+      margin-left: 0.75rem;
+    }
+
+    @include media(fullHD) {
+      margin-left: 1.5rem;
     }
   }
 }

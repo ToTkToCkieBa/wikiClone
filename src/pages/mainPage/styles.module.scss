@@ -5,7 +5,6 @@
   grid-template-rows: repeat(2, max-content) 1fr;
   grid-template-columns: min-content min-content;
 
-
   overflow-x: hidden;
   position: relative;
 
@@ -25,10 +24,6 @@
 
   @include media(fullHD) {
     padding-top: 2rem;
-  }
-
-  & .whiteCircle{
-
   }
 
   & .largeCircle{
@@ -77,7 +72,6 @@
 
       border-radius: 50rem;
     }
-
   }
 
   & .buttonLogoWrap{
@@ -88,8 +82,6 @@
     justify-content: space-between;
 
     padding: 0 1.5rem;
-
-
 
     & .logo{
       cursor: pointer;
@@ -103,6 +95,4 @@
       display: none;
     }
   }
-
-
 }

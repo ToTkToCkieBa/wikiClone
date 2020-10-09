@@ -1,12 +1,12 @@
 import React from "react";
 import Styles from './styles.module.scss'
 import Fade from "react-reveal/Fade";
+import PropTypes from "prop-types";
 
-
-
-export const History = () => {
+export const History = (props) => {
+    const { type } = props;
     return (
-        <section className={`${Styles.container}`}>
+        <section className={`${Styles.container} ${type === 'mainPage' ? Styles.mainPage : Styles.contentPage}`}>
             <div className={`${Styles.title}`}>your history today</div>
             <Fade right>
                 <div className={`${Styles.lastSearch}`}>
@@ -21,3 +21,7 @@ export const History = () => {
 };
 
 export default History;
+
+History.propTypes = {
+    type: PropTypes.oneOf(['mainPage', 'contentPage']).isRequired
+};

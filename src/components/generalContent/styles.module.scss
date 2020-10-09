@@ -14,6 +14,23 @@
     padding: 0 5rem;
   }
 
+  @include media(xl) {
+    grid-row: 2 / 4;
+    grid-column: 2 / 4;
+
+    height: min-content;
+
+    padding: 5rem 3rem 0 1rem;
+  }
+
+  & .pageTitle{
+    font-size: 1.5rem;
+    font-weight: bold;
+
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+
   & .paragraph{
     font-size: 0.75rem;
     line-height: 1.5rem;
@@ -22,15 +39,25 @@
 
     padding: 1rem 0;
 
+    @include media(fullHD) {
+      font-size: 1rem;
+      line-height: 1.75rem;
+    }
+
     & .firstLetter{
       display: inline-block;
 
       float: left;
 
       font-size: 3rem;
-      font-weight: bold;
+      font-weight: 400;
 
       padding: 0.45rem 0.45rem 0.45rem 0;
+
+      @include media(fullHD) {
+        font-size: 3.5rem;
+        line-height: 2.5rem;
+      }
     }
   }
 }

@@ -9,3 +9,5 @@ export * from 'infoBox';
 export * from 'generalContent';
 export * from 'categoriesContent';
 export * from 'images';
+export * from 'mainImage';
+export * from 'gallery'

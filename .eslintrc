@@ -41,7 +41,11 @@
         "no-param-reassign": 1,
         "camelcase": 1,
         "import/no-named-as-default": 0,
-        "no-use-before-define": 0
+        "no-use-before-define": 0,
+        "array-callback-return": 0,
+        "import/no-absolute-path": 0,
+        "func-names": 0,
+        "no-shadow": 0
     },
     "globals": {
         "window": true,

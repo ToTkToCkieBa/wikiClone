@@ -18,10 +18,10 @@ export const MainPage = () => {
             <div className={`${Styles.largeCircle}`}/>
             <Navigation type="mainPage"/>
             <Logo type="mainPage"/>
-            <Authorization/>
+            <Authorization type="mainPage"/>
             <Search type="mainPage"/>
             <Links/>
-            <History/>
+            <History type="mainPage"/>
         </section>
     );
 };

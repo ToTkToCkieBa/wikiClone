@@ -19,6 +19,19 @@
     padding: 2rem 5rem;
   }
 
+  @include media(xl) {
+    grid-row: 1 / 4;
+    grid-column: 1;
+
+    height: min-content;
+
+    padding: 7rem 1rem 3rem 5rem;
+  }
+
+  @include media(fullHD) {
+    padding: 7rem 3rem 3rem 5rem;
+  }
+
   & .test{
     display: grid;
     justify-self: center;
@@ -41,12 +54,20 @@
       font-size: 0.75rem;
       font-weight: bold;
       line-height: 1.5rem;
-      color: &black;
+      color: $black;
+
+      @include media(fullHD) {
+        font-size: 1rem;
+      }
     }
 
     & .itemContent{
       font-size: 0.75rem;
       line-height: 1.5rem;
+
+      @include media(fullHD) {
+        font-size: 1rem;
+      }
     }
   }
 }

@@ -1,16 +1,13 @@
 import React from "react";
 import Styles from './styles.module.scss'
 import {connect} from "react-redux";
+import MainImage from "../mainImage";
 
 export const InfoBox = (props) => {
     const {results} = props;
-    console.log(results);
     return (
         <section className={`${Styles.container}`}>
-            <img
-                className={`${Styles.test}`}
-                src='https://www.biography.com/.image/t_share/MTQ1MTQwNDI1NzYwNDQ5OTQ0/william-shakespeare---the-life-of-the-bard.jpg'
-                alt='df'/>
+            <MainImage/>
             {results ? Object.keys(results[0].infoboxes[0]).map((item, index) => {
                 return (
                     <div className={`${Styles.itemWrap}`} key={index}>
@@ -33,7 +30,6 @@ const mapStateToProps = store => {
         results: store.content.getContentResults.sections
     }
 }
-
 
 export default connect(mapStateToProps, null)(InfoBox)
 

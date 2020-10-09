@@ -4,11 +4,16 @@ import {connect} from "react-redux";
 
 export const GeneralContent = (props) => {
     const {results} = props;
-    console.log(results);
     return (
         <section className={`${Styles.container}`}>
             {
-                results ? results[0].paragraphs.map((item, index) =>{
+                results ?
+                    <div className={`${Styles.pageTitle}`}>
+                        {results.title}
+                    </div> : null
+            }
+            {
+                results.sections ? results.sections[0].paragraphs.map((item, index) =>{
                     let pContent = '';
                     // eslint-disable-next-line array-callback-return
                     item.sentences.map(i =>{
@@ -28,9 +33,8 @@ export const GeneralContent = (props) => {
 
 const mapStateToProps = store => {
     return {
-        results: store.content.getContentResults.sections
+        results: store.content.getContentResults
     }
 }
-
 
 export default connect(mapStateToProps, null)(GeneralContent)

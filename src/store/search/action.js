@@ -6,10 +6,6 @@ import {
     CLEAR_SEARCH_RESULTS
 } from "./types";
 
-
-
-
-
 export const search = (url) => {
     return dispatch => {
         dispatch(searchStarted());

@@ -5,10 +5,6 @@ import {
     GET_CONTENT_SUCCESS
 } from "./types";
 
-
-
-
-
 export const getContent = (target) => {
     return dispatch => {
         dispatch(getContentStarted());

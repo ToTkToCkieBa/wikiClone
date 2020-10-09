@@ -4,19 +4,39 @@
   display: grid;
   justify-items: center;
 
+  grid-column: 1;
+  grid-row: 1 / 10;
+
   grid-gap: 1rem;
   gap: 1rem;
 
   padding: 1rem 0;
 
+  height: max-content;
+
+  @include media(xl) {
+    padding: 1.5rem 0 0 0;
+    height: min-content;
+  }
+
   & .imgWrap{
-    border: 1px solid #818188;
+    cursor: pointer;
+
     display: grid;
     justify-items: center;
+
+    width: 100%;
+
+    border: 1px solid #818188;
 
     @include media(sm) {
       width: 100%;
       max-width: 30rem;
+    }
+
+    @include media(xl) {
+      max-width: 20rem;
+      height: min-content;
     }
 
     & .img{

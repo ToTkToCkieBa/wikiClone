@@ -4,14 +4,9 @@ import PropTypes from 'prop-types';
 import {search, clearSearchResults} from "../../store/search/action";
 import Styles from './styles.module.scss'
 import { Html5Entities } from 'html-entities';
-
-// eslint-disable-next-line import/no-absolute-path
 import microphone from '/wiki/wiki/src/theme/assets/svg/microphone.svg';
-// eslint-disable-next-line import/no-absolute-path
 import keyboard from '/wiki/wiki/src/theme/assets/svg/keyboard.svg';
 import SearchResult from "../searchResult";
-
-
 
 export const Search = (props) => {
     const {
@@ -25,7 +20,6 @@ export const Search = (props) => {
     const keyboardIcon = keyboard
 
     const searchHandler = (value) => {
-        console.log(results)
         if (value.length > 2){
             let url = "https://en.wikipedia.org/w/api.php";
 
@@ -43,7 +37,6 @@ export const Search = (props) => {
             onSearch(url);
         } else if (results){
             if (results[1]){
-                console.log('clear!');
                 onClearSearchResults();
             }
         }

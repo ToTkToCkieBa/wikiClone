@@ -156,6 +156,24 @@
       padding: 0 5rem;
     }
 
+    @include media(xl) {
+      justify-self: end;
+
+      grid-row: 2;
+      grid-column: 3;
+
+
+      padding: 0 3rem 0 0;
+
+      height: min-content;
+      max-width: 20rem;
+    }
+
+    @include media(fullHD) {
+      max-width: 30rem;
+    }
+
+
     & .searchNav{
       display: grid;
 
@@ -177,10 +195,6 @@
         gap: 0.5rem;
 
 
-        @include media(xl) {
-          grid-gap: 1.5rem;
-          gap: 1.5rem;
-        }
 
         @include media(fullHD) {
           grid-gap: 2.5rem;
@@ -192,14 +206,10 @@
           width: 1.25rem;
           height: 1.25rem;
 
-          @include media(xl) {
-            width: 1.75rem;
-            height: 1.75rem;
-          }
 
           @include media(fullHD) {
-            width: 2.5rem;
-            height: 2.5rem;
+            width: 2rem;
+            height: 2rem;
           }
         }
       }
@@ -224,26 +234,19 @@
 
       background: transparent;
 
-      @include media(xl) {
-        height: 6rem;
-        font-size: 4rem;
-      }
 
       @include media(fullHD) {
-        height: 9rem;
-        font-size: 6rem;
+        height: 4rem;
+        font-size: 2rem;
       }
 
       &::placeholder {
         font-size: 1.25rem;
         color: $veryLightGrey;
 
-        @include media(xl) {
-          font-size: 4rem;
-        }
 
         @include media(fullHD) {
-          font-size: 6rem;
+          font-size: 2rem;
         }
       }
     }

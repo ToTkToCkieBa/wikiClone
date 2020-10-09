@@ -1,0 +1,197 @@
+@import "resources.scss";
+
+.container{
+  display: grid;
+  grid-template-columns: 2rem 1fr 2rem;
+
+  position: fixed;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 10;
+
+  background-color: black;
+
+  @include media(sm) {
+    grid-template-columns: 3rem 1fr 3rem;
+  }
+
+  @include media(md) {
+    grid-template-columns: 5rem 1fr 5rem;
+  }
+
+  & .imageWrap{
+    display: grid;
+    justify-items: center;
+    justify-self: center;
+    align-self: center;
+
+    width: 80%;
+
+    border: 1px solid $darkGrey;
+
+    & .positionWrap{
+      display: grid;
+      grid-template-rows: 1fr min-content;
+
+      align-self: center;
+      justify-items: center;
+
+      height: 80vh;
+      width: 100%;
+
+      & .img{
+        max-width: 30rem;
+        width: 100%;
+
+        background: 50% 50% no-repeat;
+        background-size: contain;
+      }
+
+      & .caption{
+        width: 100%;
+
+        text-align: center;
+        font-size: 0.5rem;
+        line-height: 1rem;
+
+        background-color: $whiteGrey;
+        color: $black;
+
+        padding: 0.25rem 0.5rem;
+
+        @include media(md) {
+          font-size: 0.75rem;
+          padding: 0.5rem 1rem;
+        }
+
+        @include media(xl) {
+          font-size: 1rem;
+          padding: 0.5rem 1rem;
+        }
+      }
+    }
+  }
+
+  & .close{
+    cursor: pointer;
+
+    width: 2rem;
+    height: 2rem;
+
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+
+    @include media(md) {
+      right: 2rem;
+      top: 2rem;
+    }
+
+    &:hover .item{
+      background: $darkBlue;
+    }
+
+    & .item{
+      width: 30px;
+      height: 3px;
+
+      background: $whiteGrey;
+
+      &.item1{
+        transform: rotate(45deg);
+
+        position: relative;
+        top: 15px;
+        left: 2px;
+      }
+
+      &.item2{
+        transform: rotate(-45deg);
+
+        position: relative;
+        top: 12px;
+        left: 3px;
+      }
+    }
+  }
+
+  & .leftArrow{
+    cursor: pointer;
+
+    grid-column: 1;
+
+    align-self: center;
+    justify-self: center;
+
+    width: 1.5rem;
+    height: 3rem;
+
+    &:hover .item{
+      background: $darkBlue;
+    }
+
+    & .item{
+      width: 30px;
+      height: 3px;
+      background: $whiteGrey;
+
+      &.item1{
+        transform: rotate(45deg);
+
+        position: relative;
+        top: 35px;
+        right: 2px;
+      }
+
+      &.item2{
+        transform: rotate(-45deg);
+
+        position: relative;
+        top: 11px;
+        right: 2px;
+      }
+    }
+
+  }
+
+  & .rightArrow{
+    cursor: pointer;
+
+    grid-column: 3;
+
+    align-self: center;
+    justify-self: center;
+
+    width: 1.5rem;
+    height: 3rem;
+
+    &:hover .item{
+      background: $darkBlue;
+    }
+
+    & .item{
+      width: 30px;
+      height: 3px;
+      background: $whiteGrey;
+
+      &.item1{
+        transform: rotate(-45deg);
+
+        position: relative;
+        top: 35px;
+        right: 2px;
+      }
+
+      &.item2{
+        transform: rotate(45deg);
+
+        position: relative;
+        top: 11px;
+        right: 2px;
+      }
+    }
+  }
+}

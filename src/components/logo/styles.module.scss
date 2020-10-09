@@ -3,6 +3,31 @@
 .container{
   z-index: 10;
 
+  @include media(xl) {
+    grid-row: 3;
+    grid-column: 1 / 4;
+
+    justify-self: center;
+
+    padding-right: 0;
+  }
+
+  & .logo{
+    cursor: pointer;
+
+    color: $black;
+    text-decoration: none;
+    font-weight: bold;
+
+    @include media(xl) {
+      font-size: 1.25rem;
+    }
+
+    @include media(fullHD) {
+      font-size: 2rem;
+    }
+  }
+
   &.mainPage{
     grid-row: 1;
     grid-column: 2;
@@ -35,30 +60,19 @@
     @include media(lg) {
       padding-right: 5rem;
     }
-  }
-
-  @include media(xl) {
-    grid-row: 3;
-    grid-column: 1 / 4;
-
-    justify-self: center;
-
-    padding-right: 0;
-  }
-
-  & .logo{
-    cursor: pointer;
-
-    color: $black;
-    text-decoration: none;
-    font-weight: bold;
 
     @include media(xl) {
-      font-size: 1.25rem;
+      justify-self: start;
+
+      grid-row: 2;
+      grid-column: 2;
+
+      padding: 0 0 0 1rem;
     }
 
     @include media(fullHD) {
-      font-size: 2rem;
+      display: inline-block;
+      padding: 1rem 0 1rem 1rem;
     }
   }
 }
